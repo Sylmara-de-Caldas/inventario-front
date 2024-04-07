@@ -1,0 +1,48 @@
+<mat-card>    
+    <h1>{{btnTitulo}}</h1>
+    <form [formGroup]="produtoForm" (ngSubmit)="submit()" #formDirty="ngForm">
+        <input type="hidden" formControlName="id">
+        
+        <div class="input-box">
+            <mat-form-field>
+                <mat-label for="">Item: </mat-label>
+                <input matInput type="text" formControlName="item" placeholder="Ex. Calça" required>
+            </mat-form-field>
+        </div>
+
+
+        <div class="input-box">
+            <mat-form-field>
+                <mat-label for="" >Fornecedor: </mat-label>
+                <input matInput type="text" formControlName="fornecedor" placeholder="Ex. Polo" required>
+            </mat-form-field>
+        </div>
+
+        <div class="input-box">
+            <mat-form-field>
+                <mat-label for="" >Categoria: </mat-label>
+                <mat-select id="categoria" formControlName="categoria" required>
+                    <mat-option value="Eletronicos">Eletronicos</mat-option>
+                    <mat-option value="Vestuario">Vestuario</mat-option>
+                    <mat-option value="Livros">Livros</mat-option>
+                    <mat-option value="Esportes">Esportes</mat-option>
+                    <mat-option value="Brinquedos">Brinquedos</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        
+        <div class="input-box">
+            <mat-form-field>
+                <mat-label for="" >Quantidade: </mat-label>
+                <input matInput type="number" formControlName="quantidade" placeholder="Ex. 578" min="1" required>
+            </mat-form-field>
+        </div>
+
+        <input type="hidden" formControlName="status">
+
+        <div class="btn-box">
+            <button type="submit" [disabled]="!produtoForm.valid" mat-raised-button color="accent">{{btnAcao}}</button>
+            <button [routerLink]="['/']" routerLinkActive="router-link-active" mat-raised-button>Voltar</button>
+        </div>
+    </form>
+</mat-card>

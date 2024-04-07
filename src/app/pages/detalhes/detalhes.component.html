@@ -1,0 +1,62 @@
+<mat-card>
+    <div>
+        <h1>Detalhes Produto</h1>
+    </div>
+    <div *ngIf="produto">
+        <form>
+            <div class="input-box">
+                <mat-form-field>
+                    <mat-label>Item:</mat-label>
+                    <input matInput type="text" value="{{produto.item}}" disabled>
+                </mat-form-field>
+            </div>
+            <div class="input-box">
+                <mat-form-field>
+                    <mat-label>Fornecedor:</mat-label>
+                    <input matInput type="text" value="{{produto.fornecedor}}" disabled>
+                </mat-form-field>
+            </div>
+            <div class="input-box">
+                <mat-form-field>
+                    <mat-label>Categoria:</mat-label>
+                    <input matInput type="text" value="{{produto.categoria}}" disabled>
+                </mat-form-field>
+            </div>
+            <div class="input-box">
+                <mat-form-field>
+                    <mat-label>Quantidade:</mat-label>
+                    <input matInput type="text" value="{{produto.quantidade}}" disabled>
+                </mat-form-field>
+            </div>
+            <div class="input-box">
+                <mat-form-field>
+                    <mat-label>Situacao:</mat-label>
+                    <input matInput type="text" value="{{produto.disponivel == true? 'Disponivel':'Indisponivel'}}" disabled>
+                </mat-form-field>
+            </div>
+            <div class="input-box">
+                <mat-form-field>
+                    <mat-label>Status:</mat-label>
+                    <input matInput type="text" value="{{produto.status}}" disabled>
+                </mat-form-field>
+            </div>
+            <div class="input-box">
+                <mat-form-field>
+                    <mat-label>Data Inclusão:</mat-label>
+                    <input matInput type="datetime" value="{{produto.dataInclusao}}" disabled>
+                </mat-form-field>
+            </div>
+            <div class="input-box">
+                <mat-form-field>
+                    <mat-label>Data Alteração:</mat-label>
+                    <input matInput type="datetime" value="{{produto.dataAlteracao}}" disabled>
+                </mat-form-field>
+            </div>
+
+            <div class="btn-box">
+                <button (click)="disableProduct($event)" mat-raised-button color="warn">Inativar Produto</button>
+                <button [routerLink]="['/']" routerLinkActive="router-link-active" mat-raised-button>Voltar</button>
+            </div>
+        </form>
+    </div>
+</mat-card>
