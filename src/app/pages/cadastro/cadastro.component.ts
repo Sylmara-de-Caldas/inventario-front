@@ -23,10 +23,10 @@ export class CadastroComponent {
 
   btnAcao: string = "Cadastrar";
   btnTitulo: string = "Cadastrando Produto"
+  
   createProduct(produto : Produtos){
     this.produtoService.CreateProduct(produto).subscribe(data =>{
-        this.router.navigate(['/'])
-        
+        this.router.navigate(['/home'])
     })
     
 

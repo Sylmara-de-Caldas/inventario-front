@@ -37,5 +37,13 @@ export class ProdutoService {
 
   DeleteProduct(id: number): Observable<Response<Produtos[]>>{
     return this.http.delete<Response<Produtos[]>>(`${this.apiUrl}?idProduto=${id}`);
-}
+  }
+
+  Onlogin(login: string, senha: string){
+     return this.http.post<{token: string}>(`${environment.baseApiUrl}/Login`,
+     { 
+        "login": login,
+        "senha": senha,
+    });
+  }
 }

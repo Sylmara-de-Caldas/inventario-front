@@ -1,0 +1,25 @@
+<div>
+    <mat-card>
+        <h2>Login</h2>
+        <form [formGroup]="loginForm">
+
+            <div class="input-box">
+                <mat-form-field>
+                    <mat-label >Usuario: </mat-label>
+                    <input matInput type="text" formControlName="login" required>
+                </mat-form-field>
+            </div>
+            <div class="input-box">
+                <mat-form-field>
+                    <mat-label >Senha: </mat-label>
+                    <input matInput type="password" formControlName="senha" required>
+                </mat-form-field>
+            </div>
+            <div>
+                <button class="btn-box" mat-raised-button color="primary" (click)="onLogin()">
+                    Login
+                </button>
+            </div>
+        </form>
+    </mat-card>
+</div>

@@ -38,7 +38,7 @@ export class EditarComponent implements OnInit{
 
   updateProduct(produto: Produtos){
     this.produtoService.UpdateProduto(produto).subscribe(data =>{
-      this.router.navigate(['/'])
+      this.router.navigate(['/home'])
     })
   }
     

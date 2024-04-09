@@ -42,7 +42,7 @@ export class DetalhesComponent implements OnInit{
     event.preventDefault();
 
     this.produtoService.DisableProduct(this.id).subscribe(data =>{
-      this.router.navigate(['/']);
+      this.router.navigate(['/home']);
     })
   }
 
